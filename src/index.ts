@@ -19,10 +19,6 @@ enum MatchResult {
   Draw = 'D'
 };
 
-const homeWin = 'H';
-const awayWin = 'A';
-const draw = 'D';
-
 let manUnitedWins = 0;
 
 matches.forEach((match: string[]):void =>{
