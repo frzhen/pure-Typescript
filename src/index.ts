@@ -1,21 +1,16 @@
-/**
- * @Author: Fred R. Zhen
- * @Date: 2022/4/4 13:10
- * @Email: fred.zhen@gmail.com
- */
-import { CsvFileReader, MatchData } from "./CsvFileReader";
 import { MatchResult } from "./MatchResult";
+import { MatchReader } from "./MatchReader";
 
 
-const reader = new CsvFileReader('football.csv');
+const reader = new MatchReader('football.csv');
 reader.read();
 
-console.log(reader.data[0]);
+console.log(reader.data[1]);
 
 const teamName = 'Man United'
 let manUnitedWins = 0;
 
-reader.data.forEach((match: MatchData ):void =>{
+reader.data.forEach((match):void =>{
  if ( (match[1] === teamName &&  match[5] === MatchResult.HomeWin) || (match[2] === teamName && match[5] === MatchResult.AwayWin )) {
    manUnitedWins++;
  }
