@@ -5,7 +5,6 @@
  */
 import fs from 'fs';
 
-
 const matches = fs.readFileSync('football.csv', {
   encoding: 'utf-8'
 }).split('\n')
@@ -13,12 +12,23 @@ const matches = fs.readFileSync('football.csv', {
     return row.split(',');
   });
 
+// enum - enumeration
+enum MatchResult {
+  HomeWin = 'H',
+  AwayWin = 'A',
+  Draw = 'D'
+};
+
+const homeWin = 'H';
+const awayWin = 'A';
+const draw = 'D';
+
 let manUnitedWins = 0;
 
 matches.forEach((match: string[]):void =>{
- if ( match[1] === 'Man United' && match[5] === 'H') {
+ if ( match[1] === 'Man United' && match[5] === MatchResult.HomeWin) {
    manUnitedWins++;
- } else if (match[2] === 'Man United' && match[5] === 'A') {
+ } else if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin) {
    manUnitedWins++;
  }
 })
