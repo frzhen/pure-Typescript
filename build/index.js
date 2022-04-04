@@ -9,7 +9,7 @@ const CsvFileReader_1 = require("./CsvFileReader");
 const MatchResult_1 = require("./MatchResult");
 const reader = new CsvFileReader_1.CsvFileReader('football.csv');
 reader.read();
-console.log(reader.data);
+console.log(reader.data[0]);
 const teamName = 'Man United';
 let manUnitedWins = 0;
 reader.data.forEach((match) => {
