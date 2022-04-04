@@ -1,8 +1,7 @@
 .DS_Store
 node_modules
 /dist
-build
-*.js
+/build
 
 # local env files
 .env.local
