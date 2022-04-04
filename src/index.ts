@@ -4,17 +4,13 @@
  * @Email: fred.zhen@gmail.com
  */
 import { CsvFileReader } from "./CsvFileReader";
+import { MatchResult } from "./MatchResult";
 
-
-// enum - enumeration
-enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D'
-}
 
 const reader = new CsvFileReader('football.csv');
 reader.read();
+
+console.log(reader.data);
 
 const teamName = 'Man United'
 let manUnitedWins = 0;
