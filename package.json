@@ -4,7 +4,9 @@
   "description": "Typescript Demo Project generate statistic info from csv file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:build": "tsc -w",
+    "dev:run": "nodemon build/index.js",
+    "dev": "concurrently npm:dev:*"
   },
   "author": "Fred Zhen",
   "license": "MIT",
