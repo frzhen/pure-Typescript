@@ -11,6 +11,7 @@
   "author": "Fred Zhen",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^17.0.23",
     "concurrently": "^7.1.0",
     "nodemon": "^2.0.15"
   }
