@@ -7,15 +7,16 @@ import { MatchData } from "../dataTypes/MatchData";
 import { Analyzer } from "../interfaces/Analyzer";
 
 export class AverageGoalsAnalysis implements Analyzer {
-  totalGoals: number = 0;
+
 
   run(matches: MatchData[]): string {
+    let totalGoals: number = 0;
     matches.forEach((match: MatchData) => {
       if ( match[3] !== 0 || match[4] !==0 ) {
-        this.totalGoals += match[3] + match[4];
+        totalGoals += match[3] + match[4];
       }
     });
-    let averageGoals = (this.totalGoals / matches.length).toFixed(2);
+    let averageGoals = (totalGoals / matches.length).toFixed(2);
     return `The average goals of this season is ${averageGoals}.`;
 }
 }
