@@ -19,26 +19,26 @@
    class MatchReader{
    reader: DataReader 
    matches: MatchData[] 
-   load(): void
+   +load() void
    }
    MatchReader *-- DataReader: composition
    class DataReader{
    <<interface>> 
    data: string[]
-   read(): void
+   +read() void
    }
    DataReader o-- CsvFileReader: association
    class CsvFileReader{
    fileName: string
    data: string[][]
-   read(): void
+   +read() void
    }
    MatchReader o-- MatchData
    class MatchResult{
    <<enum>> 
-   H: <home team wins>
-   A: <away team wins>
-   D: <draw game>
+   HomeWin = 'H',
+   AwayWin = 'A',
+   Draw = 'D'
    }
    class MatchData{
    <<type>>
@@ -56,32 +56,68 @@
    class Analytics{
    analyzer: Analyzer
    outputTarget: OutputTarget
-   buildAndPrintRepor(): void
+   +buildAndPrintRepor() void
    }
    Analytics *--Analyzer: composition
    Analytics *--OutputTarget: composition
    class Analyzer{
    <<interface>>
-   run(matches: MatchData[]): string
+   +run(matches: MatchData[]) string
    }
    class OutputTarget{
    <<interface>>
-   print(report: string)
+   +print(report: string) void
    }
    class WinsAnalysis{
    teamName: string
-   run(matches: MatchData[])
+   +run(matches: MatchData[]) string
    }
    Analyzer <|--WinsAnalysis: implementation
    class AverageGoalsAnalysis{
-   run(matches: MatchData[])
+   +run(matches: MatchData[]) string
    }
    Analyzer <|--AverageGoalsAnalysis: implementation
    class ConsoleReport{
-   print(report:string
+   +print(report: string) void
    }
    OutputTarget <|-- ConsoleReport: implementation
+   MatchReader <|-- dateStringToDate: implementation
 ```
 
 
 ## Inheritance Design Pattern
+
+```mermaid
+   classDiagram
+   index --|> MatchReader
+   CsvFileReader <|--MatchReader: inheritance
+   class CsvFileReader {
+   <<Generic Type>>
+   fileName: string
+   data: ~T~[]
+   +abstract mapRow(row: string[]) ~T~
+   +read() void
+   }
+   class MatchReader{
+   +mapRow(row: string[]) MatchData
+   }
+   MatchReader o-- MatchData: association
+   class MatchData{
+   <<type>>
+   Date,
+   string,
+   string,
+   number,
+   number,
+   MatchResult,
+   string
+   }
+   class MatchResult{
+   <<enum>>
+   HomeWin = 'H',
+   AwayWin = 'A',
+   Draw = 'D'
+   }
+   MatchData o-- MatchResult: association
+   MatchReader o-- dateStringToDate: implementation
+```
