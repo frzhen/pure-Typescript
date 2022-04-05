@@ -16,5 +16,7 @@ export class CsvFileReader {
       .map((row: string ): string[] => {
         return row.split(',');
       });
+    // Delete the last empty data row
+    this.data.pop();
   }
 }
