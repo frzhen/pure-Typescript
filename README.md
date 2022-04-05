@@ -57,6 +57,7 @@
    analyzer: Analyzer
    outputTarget: OutputTarget
    +buildAndPrintRepor() void
+   +static winsAnalysisWithHtmlReport( teamName: string) Analytics
    }
    Analytics *--Analyzer: composition
    Analytics *--OutputTarget: composition

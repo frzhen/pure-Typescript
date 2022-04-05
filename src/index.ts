@@ -41,3 +41,7 @@ const averageGoalsHtml = new Analytics(
 )
 
 averageGoalsHtml.buildAndPrintReport(matchReader.matches);
+
+const manUnitedWinsHtml = Analytics.winsAnalysisWithHtmlReport('Man United');
+
+manUnitedWinsHtml.buildAndPrintReport(matchReader.matches);
