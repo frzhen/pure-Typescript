@@ -9,6 +9,7 @@ import { Analytics } from "./utils/Analytics";
 import { WinsAnalysis } from "./analyzers/WinsAnalysis";
 import { ConsoleReport } from "./reportTarget/ConoleReport";
 import { AverageGoalsAnalysis } from "./analyzers/AverageGoalsAnalysis";
+import { HtmlReport } from "./reportTarget/HtmlReport";
 
 
 // Read Data from csv
@@ -32,3 +33,11 @@ const averageGoals = new Analytics(
 );
 
 averageGoals.buildAndPrintReport(matchReader.matches);
+
+// Generate HTML report
+const averageGoalsHtml = new Analytics(
+  new AverageGoalsAnalysis(),
+  new HtmlReport()
+)
+
+averageGoalsHtml.buildAndPrintReport(matchReader.matches);
