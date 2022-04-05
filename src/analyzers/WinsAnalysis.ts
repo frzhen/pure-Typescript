@@ -4,7 +4,7 @@
  * @Email: fred.zhen@gmail.com
  */
 import { MatchData } from "../dataTypes/MatchData";
-import { MatchResult } from "../MatchResult";
+import { MatchResult } from "../dataTypes/MatchResult";
 import { Analyzer } from "../interfaces/Analyzer";
 
 export class WinsAnalysis implements Analyzer{

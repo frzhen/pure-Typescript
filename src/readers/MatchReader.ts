@@ -5,7 +5,7 @@
  */
 import { DataReader } from "../interfaces/DataReader";
 import { dateStringToDate } from "../utils/methods";
-import { MatchResult } from "../MatchResult";
+import { MatchResult } from "../dataTypes/MatchResult";
 import { MatchData } from "../dataTypes/MatchData";
 
 export class MatchReader {

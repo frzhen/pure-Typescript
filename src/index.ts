@@ -3,15 +3,16 @@
  * @Date: 2022/4/4 13:10
  * @Email: fred.zhen@gmail.com
  */
-import { CsvFileReader } from "./readers/CsvFileReader";
+import { CsvFileReader } from './readers/CsvFileReader';
 import { MatchReader } from "./readers/MatchReader";
 import { Analytics } from "./utils/Analytics";
 import { WinsAnalysis } from "./analyzers/WinsAnalysis";
 import { ConsoleReport } from "./reportTarget/ConoleReport";
 import { AverageGoalsAnalysis } from "./analyzers/AverageGoalsAnalysis";
 
+
 // Read Data from csv
-const matchReader = new MatchReader(new CsvFileReader('football.csv'));
+const matchReader = new MatchReader(new CsvFileReader('./src/data/football.csv'));
 matchReader.load();
 
 console.log(matchReader.matches.slice(230, 233));
