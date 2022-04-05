@@ -42,6 +42,11 @@ const averageGoalsHtml = new Analytics(
 
 averageGoalsHtml.buildAndPrintReport(matchReader.matches);
 
+// Use static to shorten declaration of Analytics combination
 const manUnitedWinsHtml = Analytics.winsAnalysisWithHtmlReport('Man United');
-
 manUnitedWinsHtml.buildAndPrintReport(matchReader.matches);
+
+// Use static to shorten MatchReader declaration
+const newMatches = MatchReader.fromCsv('./src/data/football.csv');
+newMatches.load();
+averageGoals.buildAndPrintReport(newMatches.matches);

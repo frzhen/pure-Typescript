@@ -20,6 +20,7 @@
    reader: DataReader 
    matches: MatchData[] 
    +load() void
+   +static fromCsv(fileName: string) MatchReader
    }
    MatchReader *-- DataReader: composition
    class DataReader{
@@ -82,7 +83,7 @@
    +print(report: string) void
    }
    OutputTarget <|-- ConsoleReport: implementation
-   MatchReader <|-- dateStringToDate: implementation
+   MatchReader --|> dateStringToDate: implementation
    class HtmlReport{
    +print(report: string) void
    }
@@ -124,5 +125,5 @@
    Draw = 'D'
    }
    MatchData o-- MatchResult: association
-   MatchReader o-- dateStringToDate: implementation
+   MatchReader --|> dateStringToDate: implementation
 ```
