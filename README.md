@@ -82,6 +82,10 @@
    }
    OutputTarget <|-- ConsoleReport: implementation
    MatchReader <|-- dateStringToDate: implementation
+   class HtmlReport{
+   +print(report: string) void
+   }
+   OutputTarget <|-- HtmlReport: implementation
 ```
 
 
