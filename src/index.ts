@@ -14,9 +14,10 @@ import { HtmlReport } from "./reportTarget/HtmlReport";
 
 // Read Data from csv
 const matchReader = new MatchReader(new CsvFileReader('./src/data/football.csv'));
+// Load matches in match format
 matchReader.load();
 
-console.log(matchReader.matches.slice(230, 233));
+console.log(matchReader.matches.slice(323, 325));
 
 // Find Man United wins
 const manUnitedWins = new Analytics(
