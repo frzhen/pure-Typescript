@@ -6,13 +6,13 @@
   "scripts": {
     "dev:build": "tsc -w",
     "dev:run": "nodemon build/index.js",
-    "dev": "concurrently npm:dev:*"
+    "start": "concurrently npm:dev:*"
   },
   "author": "Fred Zhen",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^17.0.23",
-    "concurrently": "^7.1.0",
-    "nodemon": "^2.0.15"
+    "@types/node": "^18.11.11",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
   }
 }
