@@ -6,17 +6,20 @@
 import fs from 'fs';
 
 export class CsvFileReader {
-  data: string[][] = [];
+  public data: string[][] = [];
   constructor(public fileName: string) {}
 
-  read(): void {
+  public read(): void {
+    // split rows in the big strings
     this.data = fs.readFileSync(this.fileName, {
-      encoding: 'utf-8'
-    }).split('\n')
+        encoding: 'utf-8'
+      })
+      .split('\n')
       .map((row: string ): string[] => {
         return row.split(',');
       });
-    // Delete the last empty data row
-    this.data.pop();
+    // console.log(this.data.length)
+    this.data.pop()
+    // console.log(this.data.length)
   }
 }
