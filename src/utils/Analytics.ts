@@ -7,11 +7,11 @@ import { MatchData } from "../dataTypes/MatchData";
 import { Analyzer } from "../interfaces/Analyzer";
 import { OutputTarget } from "../interfaces/OutputTarget";
 import { WinsAnalysis } from "../analyzers/WinsAnalysis";
-import { HtmlReport } from "../reportTarget/HtmlReport";
+import { HtmlReport } from "../reportTargets/HtmlReport";
 
 export class Analytics {
   constructor(
-    public analyzer:Analyzer,
+    public analyzer: Analyzer,
     public outputTarget: OutputTarget) {}
 
   buildAndPrintReport( matches: MatchData[] ): void {

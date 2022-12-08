@@ -10,7 +10,7 @@ export class CsvFileReader {
   constructor(public fileName: string) {}
 
   public read(): void {
-    // split rows in the big strings
+    // split rows in the big strings to arrays
     this.data = fs.readFileSync(this.fileName, {
         encoding: 'utf-8'
       })

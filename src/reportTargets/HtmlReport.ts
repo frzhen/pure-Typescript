@@ -16,5 +16,6 @@ export class HtmlReport implements OutputTarget {
     `;
 
     fs.writeFileSync('report.html', html);
+    console.log("html report generated as 'report.html'.")
   }
 }

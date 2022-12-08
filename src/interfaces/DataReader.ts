@@ -4,6 +4,6 @@
  * @Email: fred.zhen@gmail.com
  */
 export interface DataReader {
-  read(): void;
   data: string[][];
+  read(): void;
 }

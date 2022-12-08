@@ -8,12 +8,12 @@ import { MatchResult } from "../dataTypes/MatchResult";
 import { Analyzer } from "../interfaces/Analyzer";
 
 export class WinsAnalysis implements Analyzer{
-  constructor(public teamName: string) {}
+  constructor( public teamName: string ) {}
 
-  run(matches: MatchData[]): string {
+  run( matches: MatchData[] ): string {
     let wins = 0;
 
-    matches.forEach((match ):void =>{
+    matches.forEach(( match: MatchData ): void =>{
       if ( (match[1] === this.teamName &&  match[5] === MatchResult.HomeWin)
         || (match[2] === this.teamName && match[5] === MatchResult.AwayWin )) {
         wins++;

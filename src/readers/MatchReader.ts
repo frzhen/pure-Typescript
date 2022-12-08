@@ -11,7 +11,7 @@ import { CsvFileReader } from "./CsvFileReader";
 
 
 export class MatchReader {
-  matches: MatchData[] = [];
+  public matches: MatchData[] = [];
   constructor(public reader: DataReader) {}
   load(): void {
     this.reader.read();
@@ -30,6 +30,7 @@ export class MatchReader {
     );
   }
 
+  // A class method that shorten the assigment
   static fromCsv(fileName: string): MatchReader {
     return new MatchReader(new CsvFileReader(fileName));
   }

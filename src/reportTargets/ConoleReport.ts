@@ -7,7 +7,10 @@ import { OutputTarget } from "../interfaces/OutputTarget";
 
 export class ConsoleReport implements OutputTarget{
 
-  print(report:string): void {
+  print( report: string): void {
+    console.log("\n");
+    console.log("********* Console Report **********");
     console.log(report);
+    console.log("\n");
   }
 }
