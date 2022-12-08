@@ -58,6 +58,11 @@ const averageGoalsNewCastle = new Analytics(
 );
 averageGoalsNewCastle.buildAndPrintReport(matchReader.matches);
 
+
+// These are something about class method shortcuts
+// using class instances instead of class objects
+// Downside: not obvious about what you get, less readability
+//
 // Use static to shorten MatchReader declaration
 const newMatches = MatchReader.fromCsv('./src/data/football.csv');
 newMatches.load();
